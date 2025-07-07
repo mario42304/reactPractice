@@ -1,6 +1,11 @@
+import type {Task} from './types'
 
+interface tasksProps {
+    tasks: Task[],
+    onDeleteTask: (id: number) => void
+}
 
-export default function Tasks({tasks, onDeleteTask}) {
+export default function Tasks({tasks, onDeleteTask}: tasksProps) {
 
     return (
         <>

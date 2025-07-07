@@ -1,4 +1,4 @@
-export default function AddTask() {
+export default function AddTask({onAddTask}) {
     return (
         <>
             
