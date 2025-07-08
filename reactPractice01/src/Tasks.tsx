@@ -13,7 +13,7 @@ export default function Tasks({tasks, onDeleteTask}: tasksProps) {
                 {tasks.map(task => (
                     <li key={task.id}>
                         {task.title}
-                        <input type='checkbox' checked={task.complete} onClick={onDeleteTask}></input>
+                        <input type='checkbox' checked={task.complete} onClick={() => onDeleteTask(task.id)}></input>
                     </li>
                 ))}
             </ul>

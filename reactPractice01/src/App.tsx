@@ -12,17 +12,27 @@ function App() {
     { id: 3, title: 'go to the gym', complete: false}
   ]  
 
+  const[id, setId] = useState(4)
+
   const[tasks, setTasks] = useState(initialTasks)
 
   const handleDeleteTask = (id: number) => {
     setTasks(tasks => tasks.filter(task => task.id != id))
   }
 
+  const handleAddTask = (title: string) => {
+    setTasks(tasks => [
+      ...tasks,
+      {id: id, title: title, complete: false}
+    ])
+    setId(id + 1)
+  }
+
   return (
     <>
       <h1>TODOList</h1>
       <Tasks tasks={tasks} onDeleteTask={handleDeleteTask}/>
-      <AddTasks onAddTask={setTasks}/>
+      <AddTasks onAddTask={handleAddTask}/>
     </>
   )
 }
