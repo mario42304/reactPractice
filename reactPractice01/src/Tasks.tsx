@@ -48,7 +48,7 @@ export default function Tasks({tasks, onDeleteTask, onToggleEditing, onEditTitle
                         <input type='checkbox'
                             checked={task.complete}
                             onChange={() => 
-                                onToggleComplete(task.id)}
+                                onToggleComplete(task.id)}a
                         />
                         <button onClick={() => {
                             setInput(task.title)
